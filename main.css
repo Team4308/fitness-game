@@ -1,3 +1,56 @@
-li{
-	position: relative;
+.enemy_health#e_bar{
+    position: relative;
+    left: 500px;
+    top: 17px;
+    background: red;
+    border: 3px solid black;
+    width: 500px;
+    height: 30px;
+
 }
+
+.enemy_health#e_text{
+    position: relative;
+    top: -15px;
+    left: 360px;
+    font-size: 25px;
+    font-family: arial;
+}
+
+.player_health#p_bar{
+    position: relative;
+    left: 500px;
+    top: 17px;
+    background: red;
+    border: 3px solid black;
+    width: 500px;
+    height: 30px;
+}
+
+.player_health#p_text{
+    position: relative;
+    top: -15px;
+    left: 360px;
+    font-size: 25px;
+    font-family: arial;
+}
+
+.attack_list{
+    list-style-type: none;
+    position: relative;
+    top: 325px;
+    left: 1300px;
+    font-family: arial;
+}
+
+#enemy{
+    position: relative;
+    top: -225px;
+    left: 495px;
+}
+
+#spiderman{
+    position: relative;
+    left: -50px;
+}
+
