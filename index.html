@@ -3,19 +3,28 @@
 
 	<head>
 		<title>Fitness Game</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="style.css">
 	</head>
 
 	<body>
-		<ul style="list-style-type:none;">
-		  <li>
-		  	Pushup:<br>
-		  	&nbsp;&nbsp;&nbsp;&nbsp;5 DP
-		  </li>
-		  <li>
-		  	High Knee:<br>
-		  	&nbsp;&nbsp;&nbsp;&nbsp;2 HP
-		  </li>
+		<div class="enemy_health" id="e_bar"></div>
+		<div class="enemy_health" id="e_text">Enemy HP:</div>
+		<div class="player_health" id="p_bar"></div>
+		<div class="player_health" id="p_text">Player HP:</div>
+		<ul class="attack_list">
+			<!-- all this is hypothetical and there to hold space, I forgot how this game works-->
+			<li><h4>Attacks</h4></li>
+			<li>Pushup: 5 DP</li>
+			<li>Squat: 2 DP</li>
+			<li></li>
+			<li><h4>Heals</h4></li>
+			<li>Lunge: 2 HP</li>
+			<li>Leg Raise: 3 HP</li>
 		</ul>
+		<img src="slowpoke.gif" alt="this slowpoke moves"  width="500" id="enemy">
+		<img src="spiderman.gif" alt="Moving spiderman" width="125" id="spiderman">
 	</body>
 
 </html>
