@@ -1,6 +1,8 @@
 const videoElement = document.getElementsByClassName('input_video')[0];
 const canvasElement = document.getElementsByClassName('output_canvas')[0];
 const canvasCtx = canvasElement.getContext('2d');
+const pushupCtr = document.getElementById('pushupctr')
+var npushups = 0;
 
 function onResults(results) {
   canvasCtx.save();
@@ -12,6 +14,10 @@ function onResults(results) {
   drawLandmarks(canvasCtx, results.poseLandmarks,
                 {color: '#FF0000', lineWidth: 2});
   canvasCtx.restore();
+
+
+
+  console.log(results.poseLandmarks[0])
 }
 
 const pose = new Pose({locateFile: (file) => {
@@ -33,3 +39,4 @@ const camera = new Camera(videoElement, {
   height: 720
 });
 camera.start();
+

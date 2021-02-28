@@ -69,5 +69,7 @@ img.spiderman{
 }
 
 .output_canvas {
+  position: relative;
   transform: scale(-0.5, 0.5);
+    t
 }
