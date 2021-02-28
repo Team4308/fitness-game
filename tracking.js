@@ -1,7 +1,7 @@
 const videoElement = document.getElementsByClassName('input_video')[0];
 const canvasElement = document.getElementsByClassName('output_canvas')[0];
 const canvasCtx = canvasElement.getContext('2d');
-const pushupCtr = document.getElementById('pushupctr')
+const pushupCtr = document.getElementById('p_bar')
 var initialising = 1
 var npushups = 0;
 var pushuphigh = false;
@@ -31,12 +31,14 @@ function onResults(results) {
         npushups++;
         console.log(Math.floor(npushups/2));
         pushuphigh = true;
+        pushupCtr.innerHTML = Math.floor(npushups/2)
     }
 
     if (nosehandist < 0.2 && pushuphigh == true) {
         npushups++;
         console.log(Math.floor(npushups/2));
         pushuphigh = false;
+        pushupCtr.innerHTML = Math.floor(npushups/2)
     }
 }
 
