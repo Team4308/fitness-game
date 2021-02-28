@@ -22,6 +22,7 @@ export default function (landmarks) {
     if (disty > height && !high) {
         high = true;
     }
+    
     return [1, nsquats];
 }
 
