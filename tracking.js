@@ -3,6 +3,9 @@ const canvasElement = document.getElementsByClassName('output_canvas')[0];
 const canvasCtx = canvasElement.getContext('2d');
 const pushupCtr = document.getElementById('pushupctr')
 var npushups = 0;
+var nosepos;
+var meanhpos;
+var nosehandist;
 
 function onResults(results) {
   canvasCtx.save();
@@ -15,9 +18,12 @@ function onResults(results) {
                 {color: '#FF0000', lineWidth: 2});
   canvasCtx.restore();
 
+  nosepos = results.poseLandmarks[0].y
+  meanhpos = (results.poseLandmarks[15].y + results.poseLandmarks[16].y)/2
 
+  nosehandist = meanhpos - nosepos
 
-  console.log(results.poseLandmarks[0])
+  console.log(nosehandist)
 }
 
 const pose = new Pose({locateFile: (file) => {
