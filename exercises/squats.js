@@ -8,7 +8,7 @@ var first = true;
 export default function (landmarks) {
     var right = landmarks[0].y - landmarks[28].y;
     var left = landmarks[0].y - landmarks[27].y;
-    var dist = (right + left) / 2;
+    var dist = Math.abs((right + left) / 2);
 
     if(first){
         height = dist-0.05;
