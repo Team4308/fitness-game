@@ -13,32 +13,52 @@
 </head>
 
 <body>
-	<div>
-		<h1>Accu: </h1>
-		<h1 id="accu"></h1>
+	<img src="images/background.jpg" alt="" id="background">
+
+	<div class="health" id="playerBar">
+		<h1>Player</h1>
+		<progress id="bar" value="100" max="500"></progress>
 	</div>
-	<div>
-		<h1>Reps: </h1>
-		<h1 id="reps"></h1>
+
+	<div class="health" id="enemyBar">
+		<h1>Enemy</h1>
+		<progress id="bar" value="100" max="100"></progress>
 	</div>
-	
+
+	<div class="chars">
+		<img class="chars" id="player" src="images/char1.gif">
+		<img class="chars" id="enemy" src="images/char2.gif">
+	</div>
+
+	<div class="set">
+		<div class="place">
+			<button class="option_attack">
+				<h2>Pushup</h2>
+				<h4>5 DMB</h4>
+			</button>
+			<button class="option_attack">
+				<h2>Squat</h2>
+				<h4>2 DMB</h4>
+			</button>
+			<button class="option_heal">
+				<h2>Leg Raise</h2>
+				<h4>3 HP</h4>
+			</button>
+			<button class="option_heal">
+				<h2>Lunge</h2>
+				<h4>2 HP</h4>
+			</button>
+		</div>
+
+	</div>
 
 	<div class="container">
 		<video class="input_video"></video>
-		<canvas class="output_canvas" width="1280px" height="720px"></canvas>
+		<canvas class="output_canvas" width="480px" height="270px"></canvas>
 	</div>
 
 	<script src="./tracking.js"></script>
-	<script>
-		loadExercise("legraises");
 
-		function postD(detects) {
-			document.getElementById("reps").innerHTML = detects[1];
-			document.getElementById("accu").innerHTML = detects[0];
-		}
-
-		setPostDetect(postD);
-	</script>
 </body>
 
 </html>
