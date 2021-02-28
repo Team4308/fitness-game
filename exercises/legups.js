@@ -8,12 +8,12 @@ export default function (landmarks) {
     var right = landmarks[26].y - landmarks[24].y;
 
     if (left < 0.1 && first) {
-        currentleg = "left";
+        var currentleg = "left";
         first = false;
     }
 
     if (right < 0.1 && first) {
-        currentleg = "right";
+        var currentleg = "right";
         first = false;
     }
 
