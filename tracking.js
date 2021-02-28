@@ -45,7 +45,7 @@ function onResults(results) {
     canvasCtx.drawImage(
         results.image, 0, 0, canvasElement.width, canvasElement.height);
     drawConnectors(canvasCtx, results.poseLandmarks, POSE_CONNECTIONS,
-        { color: '#00FF00', lineWidth: 4 });
+        { color: '#00FF00', lineWidth: 2 });
     canvasCtx.restore();
 
     detects = detectFn(results.poseLandmarks);
