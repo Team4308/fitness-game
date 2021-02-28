@@ -1,9 +1,11 @@
-first = true;
-nlegups = 0;
+// Legup detection
+
+var first = true;
+var nlegups = 0;
 
 export default function (landmarks) {
-    left = landmarks[25].y - landmarks[23].y;
-    right = landmarks[26].y - landmarks[24].y;
+    var left = landmarks[25].y - landmarks[23].y;
+    var right = landmarks[26].y - landmarks[24].y;
 
     if (left < 0.1 && first) {
         currentleg = "left";
