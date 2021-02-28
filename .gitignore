@@ -1,2 +1,5 @@
 # Jetbrains things
 .idea/
+
+# VSCode things
+.vscode/

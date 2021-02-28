@@ -1,49 +1,59 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>Fitness Game</title>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="stylesheet" href="main.css">
-    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js" crossorigin="anonymous"></script>
-		<script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils@0.1/drawing_utils.js" crossorigin="anonymous"></script>
-		<script src="https://cdn.jsdelivr.net/npm/@mediapipe/pose@0.1/pose.js" crossorigin="anonymous"></script>
-	</head>
 
-	<body>
-		<div class="health" id="bars">
-			<div class="health" id="e_bar"> 0hp</div><br>
-			<div class="health" id="p_bar">0hp</div>
+<head>
+	<title>Fitness Game</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="main.css">
+	<script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils@0.1/drawing_utils.js"
+		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@mediapipe/pose@0.1/pose.js" crossorigin="anonymous"></script>
+</head>
 
-		</div>
-		<div class="health" id="t_set">
-			Enemy Health:<br><br>
-			&nbsp;Player Health:
-		</div>
-		<ul id="set">
-			<li><h2>Attacks</h2></li>
-			<li class="moves" id="pushup">Pushup: 5 DMG</li>
-			<li class="moves" id="squat">Squat: 2 DMG</li>
-			<li><h2>Heals</h2></li>
-			<li class="moves" id="leg">Leg Raise: 3 HP</li>
-			<li class="moves" id="lunge">Lunge: 2 HP</li>
-		</ul>
-		<div class="images">
-			<img src="slowpoke.gif" width="600" class="slowpoke">
-			<img src="spiderman.gif" width="190" class="spiderman">
-		</div>
+<body>
+	<div class="health" id="bars">
+		<div class="health" id="e_bar">0hp</div><br>
+		<div class="health" id="p_bar">0hp</div>
 
-		<div class="container">
-			<video class="input_video"></video>
-			<canvas class="output_canvas" width="1280px" height="720px"></canvas>
-		</div>
+	</div>
+	<div class="health" id="t_set">
+		Enemy Health:<br><br>
+		&nbsp;Player Health:
+	</div>
+	<ul id="set">
+		<li>
+			<h2>Attacks</h2>
+		</li>
+		<li class="moves" id="pushup">Pushup: 5 DMG</li>
+		<li class="moves" id="squat">Squat: 2 DMG</li>
+		<li>
+			<h2>Heals</h2>
+		</li>
+		<li class="moves" id="leg">Leg Raise: 3 HP</li>
+		<li class="moves" id="lunge">Lunge: 2 HP</li>
+	</ul>
+	<div class="images">
+		<img src="slowpoke.gif" width="600" class="slowpoke">
+		<img src="spiderman.gif" width="190" class="spiderman">
+	</div>
 
-		<div id="pushupctr">
-			<title>Pushups done so far:</title>
-			<title>npushups</title>
-		</div>
+	<div class="container">
+		<video class="input_video"></video>
+		<canvas class="output_canvas" width="1280px" height="720px"></canvas>
+	</div>
 
-		<script src="./tracking.js"></script>
+	<script src="./tracking.js"></script>
+	<script>
+		loadExercise("pushups");
 
-	</body>
+		function postD(detects) {
+			document.getElementById("p_bar").innerHTML = detects[1];
+		}
+
+		setPostDetect(postD);
+	</script>
+</body>
+
 </html>
