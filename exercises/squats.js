@@ -1,16 +1,13 @@
-high = true;
-nsqu = 0
+var high = true;
+var nsquats = 0;
+var height;
 
 export default function (landmarks) {
-    rightx = landmarks[28].x - landmarks[24].x;
-    leftx = landmarks[27].x - landmarks[23].x;
-    distx = (right + left) / 2;
+    var right = landmarks[0].x - landmarks[28].x;
+    var left = landmarks[0].x - landmarks[27].x;
+    var dist = (right + left) / 2;
 
-    righty = landmarks[28].y - landmarks[24].y;
-    lefty = landmarks[27].y - landmarks[23].y;
-    disty = (right + left) / 2;
-
-    if (distx < 0.1 && leglow) {
+    if (dist < 0.1 && leglow) {
         nlegraises++;
         leglow = false;
     }
