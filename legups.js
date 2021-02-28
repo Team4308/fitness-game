@@ -25,5 +25,5 @@ export default function (landmarks) {
         currentleg = "right";
     }
 
-    return (1, nlegups);
+    return [1, nlegups];
 }
