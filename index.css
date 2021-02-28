@@ -1,0 +1,7 @@
+.input_video {
+  display: none;
+}
+
+.output_canvas {
+  transform: scale(-0.5, 0.5) translateY(-100%);
+}

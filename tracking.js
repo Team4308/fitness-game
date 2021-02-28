@@ -11,11 +11,12 @@ var detectFn = (landmarks) => {
 };
 
 function loadExercise(name) {
+    detects = [0, 0];
     import("./exercises/" + name + ".js").then(obj => detectFn = obj.default).catch(err => console.error(err));
 }
 
 // Post Detect Callback
-var postDetect = (detects) => {};
+var postDetect = (detects) => { };
 
 function setPostDetect(callback) {
     postDetect = callback;
@@ -44,7 +45,7 @@ function onResults(results) {
     canvasCtx.drawImage(
         results.image, 0, 0, canvasElement.width, canvasElement.height);
     drawConnectors(canvasCtx, results.poseLandmarks, POSE_CONNECTIONS,
-        {color: '#00FF00', lineWidth: 4});
+        { color: '#00FF00', lineWidth: 4 });
     canvasCtx.restore();
 
     detects = detectFn(results.poseLandmarks);
@@ -68,7 +69,7 @@ pose.onResults(onResults);
 // Start camera
 const camera = new Camera(videoElement, {
     onFrame: async () => {
-        await pose.send({image: videoElement});
+        await pose.send({ image: videoElement });
     },
     width: 1280,
     height: 720

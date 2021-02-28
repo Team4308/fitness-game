@@ -5,7 +5,7 @@ var total_pushups = 0;
 var npushups = 0;
 var pushuphigh = false;
 
-export default function(landmarks) {
+export default function (landmarks) {
     var nosepos = landmarks[0].y;
     var meanhpos = (landmarks[15].y + landmarks[16].y) / 2;
     var nosehanddist = meanhpos - nosepos;
