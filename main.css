@@ -63,3 +63,7 @@ img.spiderman{
     left: 350px;
     top: 60px;
 }
+
+.input_video {
+  display: none;
+}
