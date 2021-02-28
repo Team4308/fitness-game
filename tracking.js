@@ -2,7 +2,7 @@ const videoElement = document.getElementsByClassName('input_video')[0];
 const canvasElement = document.getElementsByClassName('output_canvas')[0];
 const canvasCtx = canvasElement.getContext('2d');
 const pushupCtr = document.getElementById('p_bar')
-var initialising = 1
+
 var npushups = 0;
 var pushuphigh = false;
 var nosepos;
@@ -22,11 +22,11 @@ function onResults(results) {
 
 
     // Pushup detection
-    
-    nosepos = results.poseLandmarks[0].y
-    meanhpos = (results.poseLandmarks[15].y + results.poseLandmarks[16].y) / 2
 
-    nosehandist = meanhpos - nosepos
+    nosepos = results.poseLandmarks[0].y;
+    meanhpos = (results.poseLandmarks[15].y + results.poseLandmarks[16].y) / 2;
+
+    nosehandist = meanhpos - nosepos;
 
     if (nosehandist > 0.5 && pushuphigh == false) {
         npushups++;
