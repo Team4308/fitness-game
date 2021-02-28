@@ -1,3 +1,5 @@
+// Squat detection
+
 var high = true;
 var nsquats = 0;
 var height;
