@@ -20,25 +20,26 @@ function onResults(results) {
         {color: '#FF0000', lineWidth: 2});
     canvasCtx.restore();
 
+
+    // Pushup detection
+    
     nosepos = results.poseLandmarks[0].y
     meanhpos = (results.poseLandmarks[15].y + results.poseLandmarks[16].y) / 2
 
     nosehandist = meanhpos - nosepos
 
-    //console.log(nosehandist)
-
     if (nosehandist > 0.5 && pushuphigh == false) {
         npushups++;
-        console.log(Math.floor(npushups/2));
+        console.log(Math.floor(npushups / 2));
         pushuphigh = true;
-        pushupCtr.innerHTML = Math.floor(npushups/2)
+        pushupCtr.innerHTML = Math.floor(npushups / 2)
     }
 
     if (nosehandist < 0.2 && pushuphigh == true) {
         npushups++;
-        console.log(Math.floor(npushups/2));
+        console.log(Math.floor(npushups / 2));
         pushuphigh = false;
-        pushupCtr.innerHTML = Math.floor(npushups/2)
+        pushupCtr.innerHTML = Math.floor(npushups / 2)
     }
 }
 
