@@ -18,10 +18,9 @@ export default function (landmarks) {
     }
 
     if (disty < 0.1 && !leglow) {
-        nlegraises++;
         leglow = true;
     }
-    
-    return [1, Math.floor(nlegraises / 2)];
+
+    return [1, nlegraises];
 }
 
