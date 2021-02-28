@@ -24,6 +24,8 @@ function onResults(results) {
   nosehandist = meanhpos - nosepos
 
   console.log(nosehandist)
+
+  //if(nosehandist > 0.5 || nosehandist < 0.2)
 }
 
 const pose = new Pose({locateFile: (file) => {
