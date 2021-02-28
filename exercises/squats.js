@@ -1,21 +1,25 @@
 var high = true;
 var nsquats = 0;
 var height;
+var first = true;
 
 export default function (landmarks) {
-    var right = landmarks[0].x - landmarks[28].x;
-    var left = landmarks[0].x - landmarks[27].x;
+    var right = landmarks[0].y - landmarks[28].y;
+    var left = landmarks[0].y - landmarks[27].y;
     var dist = (right + left) / 2;
 
-    if (dist < 0.1 && leglow) {
-        nlegraises++;
-        leglow = false;
+    if(first){
+        height = dist-0.05;
     }
 
-    if (disty < 0.1 && !leglow) {
-        nlegraises++;
-        leglow = true;
+    if (dist < 0.2 && high) {
+        nsquats++;
+        high = false;
     }
-    return (1, Math.floor(nlegraises / 2);
+
+    if (disty > height && !high) {
+        high = true;
+    }
+    return [1, nsquats];
 }
 
