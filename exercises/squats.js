@@ -1,3 +1,5 @@
+// Squat detection
+
 var high = true;
 var nsquats = 0;
 var height;
@@ -20,6 +22,7 @@ export default function (landmarks) {
     if (disty > height && !high) {
         high = true;
     }
+    
     return [1, nsquats];
 }
 
