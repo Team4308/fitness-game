@@ -47,6 +47,7 @@ const pose = new Pose({
         return `https://cdn.jsdelivr.net/npm/@mediapipe/pose/${file}`;
     }
 });
+
 pose.setOptions({
     upperBodyOnly: false,
     smoothLandmarks: true,
