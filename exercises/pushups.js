@@ -1,5 +1,4 @@
 // Pushup detection
-const pushupCtr = document.getElementById('p_bar');
 
 var total_pushups = 0;
 var npushups = 0;

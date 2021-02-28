@@ -1,3 +1,5 @@
+// Legup detection
+
 var first = true;
 var nlegups = 0;
 
