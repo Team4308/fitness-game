@@ -5,26 +5,31 @@
 		<title>Fitness Game</title>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="stylesheet" href="style.css">
+		<link rel="stylesheet" href="main.css">
 	</head>
 
 	<body>
-		<div class="enemy_health" id="e_bar"></div>
-		<div class="enemy_health" id="e_text">Enemy HP:</div>
-		<div class="player_health" id="p_bar"></div>
-		<div class="player_health" id="p_text">Player HP:</div>
-		<ul class="attack_list">
-			<!-- all this is hypothetical and there to hold space, I forgot how this game works-->
-			<li><h4>Attacks</h4></li>
-			<li>Pushup: 5 DP</li>
-			<li>Squat: 2 DP</li>
-			<li></li>
-			<li><h4>Heals</h4></li>
-			<li>Lunge: 2 HP</li>
-			<li>Leg Raise: 3 HP</li>
+		<div class="health" id="bars">
+			<div class="health" id="e_bar"> 0hp</div><br>
+			<div class="health" id="p_bar">0hp</div>
+
+		</div>
+		<div class="health" id="t_set">
+			Enemy Health:<br><br>
+			&nbsp;Player Health:
+		</div>
+		<ul id="set">
+			<li><h2>Attacks</h2></li>
+			<li class="moves" id="pushup">Pushup: 5 DMG</li>
+			<li class="moves" id="squat">Squat: 2 DMG</li>
+			<li><h2>Heals</h2></li>
+			<li class="moves" id="leg">Leg Raise: 3 HP</li>
+			<li class="moves" id="lunge">Lunge: 2 HP</li>
 		</ul>
-		<img src="slowpoke.gif" alt="this slowpoke moves"  width="500" id="enemy">
-		<img src="spiderman.gif" alt="Moving spiderman" width="125" id="spiderman">
+		<div class="images">
+			<img src="slowpoke.gif" width="600" class="slowpoke">
+			<img src="spiderman.gif" width="190" class="spiderman">
+		</div>
 	</body>
 
 </html>
