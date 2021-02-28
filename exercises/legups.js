@@ -2,18 +2,19 @@
 
 var first = true;
 var nlegups = 0;
+var currentleg;
 
 export default function (landmarks) {
     var left = landmarks[25].y - landmarks[23].y;
     var right = landmarks[26].y - landmarks[24].y;
 
     if (left < 0.1 && first) {
-        var currentleg = "left";
+        currentleg = "left";
         first = false;
     }
 
     if (right < 0.1 && first) {
-        var currentleg = "right";
+        currentleg = "right";
         first = false;
     }
 
