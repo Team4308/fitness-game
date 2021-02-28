@@ -19,7 +19,7 @@ export default function (landmarks) {
         high = false;
     }
 
-    if (disty > height && !high) {
+    if (dist > height && !high) {
         high = true;
     }
     
