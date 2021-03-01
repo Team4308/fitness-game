@@ -97,13 +97,16 @@ $(document).ready(function () {
         timer(30);
 
         loadExercise(exer);
-
-        function postD(detects) {
-            document.getElementById("reps").innerHTML = detects[1];
-        }
-
-        setPostDetect(postD);
-        return new Promise(resolve => setTimeout(resolve, 30000));
+        
+        return new Promise(resolve => {
+            setPostDetect((detects) => {
+                if (detects[1] >= 5) {
+                    resolve();
+                }
+                reps = detects[1];
+            });
+            setTimeout(resolve, 30000);
+        });
     }
 
     function timer(x) {
