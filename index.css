@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=DotGothic16&display=swap%27');
+
 body{
     color: white;
 }
@@ -71,4 +73,66 @@ progress::-webkit-progress-value {
     margin: auto;
     padding-top: 25vh;
     transform: scaleX(-1);
+}
+.mainmenu_buttons{
+    background-color: #BA55D3; /* purple */
+  border: none;
+  color: white;
+  padding: 2% 1%;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1%;
+  display: block;
+  border-radius: 16px;
+  width: 15%;
+  height: 11%;
+  font-size: 1.5vw;
+}
+
+#mainheader {
+position: absolute;
+font-family: 'DotGothic16', sans-serif;
+font-size: 7vw;
+ top: 26vh;
+ right:20vw;
+}
+
+#buttonproflie{
+position: absolute;
+  top: 15%;
+  left: 5%;
+}
+
+#buttonvolume {
+position: absolute;
+  top: 35%;
+  left: 5%;
+}
+
+#buttoncharacter{
+position: absolute;
+  top: 55%;
+  left: 5%;
+}
+
+#buttonterms{
+position: absolute;
+  top: 75%;
+  left: 5%;
+}
+
+#buttonfight{
+margin: 0;
+  position: absolute;
+  top: 55vh;
+  right: 42vw;
+}
+
+#mainpgperson {
+  position: absolute;
+  top: 25vh;
+  right: -7vw;
+  width: 50vw;
+  height: 75vh;  
 }
