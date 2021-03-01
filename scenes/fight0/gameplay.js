@@ -56,7 +56,7 @@ $(document).ready(function(){
     function selectExer(){ // selects exercise and disables other exercises
         return new Promise(function(resolve) {
             document.getElementById('option_attack_p').addEventListener('click', function(e) {
-                exercise = "p";
+                exercise = "pushups";
                 document.getElementById("option_attack_s").disabled = true;
                 document.getElementById("option_heal_lr").disabled = true;
                 document.getElementById("option_heal_kr").disabled = true;
@@ -65,7 +65,7 @@ $(document).ready(function(){
             }, {once: true});
             document.getElementById('option_attack_s').addEventListener('click', function(e) {
                 
-                exercise = "s";
+                exercise = "squats";
                 document.getElementById("option_attack_p").disabled = true;
                 document.getElementById("option_heal_lr").disabled = true;
                 document.getElementById("option_heal_kr").disabled = true;
@@ -73,7 +73,7 @@ $(document).ready(function(){
             }, {once: true});
             document.getElementById('option_heal_lr').addEventListener('click', function(e) {
                 
-                exercise = "lr";
+                exercise = "legraises";
                 document.getElementById("option_attack_p").disabled = true;
                 document.getElementById("option_attack_s").disabled = true;
                 document.getElementById("option_heal_kr").disabled = true;
@@ -81,7 +81,7 @@ $(document).ready(function(){
             }, {once: true});
             document.getElementById('option_heal_kr').addEventListener('click', function(e) {
                 
-                exercise = "kr";
+                exercise = "kneeraises";
                 document.getElementById("option_attack_p").disabled = true;
                 document.getElementById("option_attack_s").disabled = true;
                 document.getElementById("option_heal_lr").disabled = true;
@@ -93,9 +93,14 @@ $(document).ready(function(){
 
     function doExercise(exer){
         timer(30);
-        // do count based on passed in exer
-        reps = 5;
-        document.getElementById("reps").innerHTML = reps;
+        
+        loadExercise(exer);
+
+        function postD(detects) {
+            document.getElementById("reps").innerHTML = detects[1];
+        }
+
+        setPostDetect(postD);
         return new Promise(resolve => setTimeout(resolve, 30000));
     }
 
