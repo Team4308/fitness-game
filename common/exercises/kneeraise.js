@@ -19,7 +19,6 @@ export default function (landmarks) {
     }
 
     if (left < 0.1 && currentleg == "right") {
-        nlegups++;
         currentleg = "left";
     }
 

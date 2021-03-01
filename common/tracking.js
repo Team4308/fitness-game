@@ -18,6 +18,10 @@ function loadExercise(name) {
     }).catch(err => console.error(err));
 }
 
+function resetDetect() {
+    postDetect = (detects) => { };
+}
+
 // Post Detect Callback
 var postDetect = (detects) => { };
 

@@ -1,14 +1,14 @@
 $(document).ready(function () {
     var playerTurn = true;
-    var reps = 0;
-    var playerHealth = document.getElementById("barp").value;
-    var enemyHealth = document.getElementById("bare").value;
+    var playerHealth = 100;
+    var enemyHealth = 100;
     var exercise = "";
+    var timerStatus = false;
     var damage = {
-        "p": -5,
-        "s": -2,
-        "lr": 3,
-        "kr": 2
+        "pushups": -5,
+        "squats": -2,
+        "legraises": 3,
+        "kneeraises": 2
     };
 
     start();
@@ -25,18 +25,18 @@ $(document).ready(function () {
     async function gamePlay() {
         if (playerTurn) {
             await selectExer();
-            await doExercise(exercise);
+            var reps = 0;
+            await doExercise(exercise).then((value) => reps = value);
             if (reps * damage[exercise] > 0) { // if heal
                 playerHealth = playerHealth + reps * damage[exercise];
                 document.getElementById("barp").value = playerHealth;
-                alert("You healed " + reps * damage[exercise] + " xp");
+                alert("You healed " + reps * damage[exercise] + " health");
             } else { // if damage
                 enemyHealth = enemyHealth + reps * damage[exercise];
                 document.getElementById("bare").value = enemyHealth;
                 alert("You did " + reps * damage[exercise] + " damage");
             }
             playerTurn = false;
-            reps = 0;
             exercise = "";
             return new Promise(resolve => setTimeout(resolve, 1000));
         } else {
@@ -66,7 +66,6 @@ $(document).ready(function () {
 
             }, { once: true });
             document.getElementById('option_attack_s').addEventListener('click', function (e) {
-
                 exercise = "squats";
                 document.getElementById("option_attack_p").disabled = true;
                 document.getElementById("option_heal_lr").disabled = true;
@@ -74,7 +73,6 @@ $(document).ready(function () {
                 resolve(e);
             }, { once: true });
             document.getElementById('option_heal_lr').addEventListener('click', function (e) {
-
                 exercise = "legraises";
                 document.getElementById("option_attack_p").disabled = true;
                 document.getElementById("option_attack_s").disabled = true;
@@ -82,7 +80,6 @@ $(document).ready(function () {
                 resolve(e);
             }, { once: true });
             document.getElementById('option_heal_kr').addEventListener('click', function (e) {
-
                 exercise = "kneeraises";
                 document.getElementById("option_attack_p").disabled = true;
                 document.getElementById("option_attack_s").disabled = true;
@@ -90,31 +87,40 @@ $(document).ready(function () {
                 resolve(e);
             }, { once: true });
         });
-
     }
 
     function doExercise(exer) {
-        timer(30);
+        timerStatus = true;
+        timer(20);
 
         loadExercise(exer);
 
         return new Promise(resolve => {
+            var reps = 0;
             setPostDetect((detects) => {
-                if (detects[1] >= 5) {
-                    resolve();
-                }
                 reps = detects[1];
                 document.getElementById("reps").innerHTML = reps;
+                if (detects[1] >= 8) {
+                    resetDetect();
+                    timerStatus = false;
+                    resolve(reps);
+                }
             });
-            setTimeout(resolve, 30000);
+            setTimeout(() => {
+                if (timerStatus) {
+                    resetDetect();
+                    timerStatus = false;
+                    resolve(reps);
+                }
+            }, 20000);
         });
     }
 
     function timer(x) {
-        if (x === -1) {
+        if (x === 0) {
             return;
         }
         document.getElementById("timer").innerHTML = x;
-        return setTimeout(() => { timer(--x) }, 1000)
+        return setTimeout(() => { timer(--x) }, 1000);
     }
 })
