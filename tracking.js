@@ -14,7 +14,7 @@ function loadExercise(name) {
     detects = [0, 0];
     import("./exercises/" + name + ".js").then(obj => {
         detectFn = obj.default;
-        console.log(obj);
+        obj.reset();
     }).catch(err => console.error(err));
 }
 
