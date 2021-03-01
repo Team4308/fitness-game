@@ -104,6 +104,7 @@ $(document).ready(function () {
                     resolve();
                 }
                 reps = detects[1];
+                document.getElementById("reps").innerHTML = reps;
             });
             setTimeout(resolve, 30000);
         });
