@@ -95,7 +95,6 @@ $(document).ready(function(){
         timer(30);
         // do count based on passed in exer
         reps = 5;
-        document.getElementById("reps").innerHTML = reps;
         return new Promise(resolve => setTimeout(resolve, 30000));
     }
 
@@ -109,6 +108,7 @@ $(document).ready(function(){
 })
 
 
+/*
 const atkPushupBtn = document.getElementById("option_attack_p");
 atkPushupBtn.onclick = () => {
     loadExercise("pushups");
@@ -149,3 +149,4 @@ healKneeraiseBtn.onclick = () => {
 
     setPostDetect(postD);
 };
+*/
