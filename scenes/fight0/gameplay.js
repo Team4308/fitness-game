@@ -41,7 +41,7 @@ $(document).ready(function () {
             return new Promise(resolve => setTimeout(resolve, 1000));
         } else {
             // random damage
-            var temp = Math.floor((Math.random() * 20) + 5)
+            var temp = Math.floor((Math.random() * 40) + 5)
             playerHealth = playerHealth - temp;
             document.getElementById("barp").value = playerHealth;
             playerTurn = true;
