@@ -1,4 +1,4 @@
-// Legup detection
+// Knee raise detection
 
 var first = true;
 var nlegups = 0;

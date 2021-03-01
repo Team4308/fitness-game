@@ -13,7 +13,7 @@
 </head>
 
 <body>
-	<img src="images/background.jpg" alt="" id="background">
+	<img src="images/background.png" alt="" id="background">
 
 	<div class="health" id="playerBar">
 		<h1>Player</h1>
@@ -44,8 +44,8 @@
 				<h2>Leg Raise</h2>
 				<h4>3 HP</h4>
 			</button>
-			<button class="option_heal" id="option_attack_lu">
-				<h2>Legup</h2>
+			<button class="option_heal" id="option_heal_kr">
+				<h2>Knee Raise</h2>
 				<h4>2 HP</h4>
 			</button>
 		</div>
@@ -89,9 +89,9 @@
 
 			setPostDetect(postD);
 		};
-		const healLegupBtn = document.getElementById("option_attack_lu");
-		healLegupBtn.onclick = () => {
-			loadExercise("legups");
+		const healKneeraiseBtn = document.getElementById("option_attack_kr");
+		healKneeraiseBtn.onclick = () => {
+			loadExercise("kneeraise");
 
 			function postD(detects) {
 				document.getElementById("barp").value = detects[1];
