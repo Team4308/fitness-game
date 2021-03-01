@@ -25,3 +25,9 @@ export default function (landmarks) {
 
     return [1, total_pushups];
 }
+
+export function reset() {
+    pushuphigh = false;
+    total_pushups = 0;
+    npushups = 0;
+}

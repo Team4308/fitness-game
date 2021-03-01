@@ -24,3 +24,7 @@ export default function (landmarks) {
     return [1, nlegraises];
 }
 
+export function reset() {
+    leglow = true;
+    nlegraises = 0;
+}

@@ -30,3 +30,9 @@ export default function (landmarks) {
 
     return [1, nlegups];
 }
+
+export function reset() {
+    first = true;
+    nlegups = 0;
+    currentleg = undefined;
+}

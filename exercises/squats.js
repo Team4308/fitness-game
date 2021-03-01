@@ -26,3 +26,9 @@ export default function (landmarks) {
     return [1, nsquats];
 }
 
+export function reset() {
+    high = true;
+    nsquats = 0;
+    height = undefined;
+    first = true;
+}

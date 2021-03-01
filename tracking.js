@@ -12,7 +12,10 @@ var detectFn = (landmarks) => {
 
 function loadExercise(name) {
     detects = [0, 0];
-    import("./exercises/" + name + ".js").then(obj => detectFn = obj.default).catch(err => console.error(err));
+    import("./exercises/" + name + ".js").then(obj => {
+        detectFn = obj.default;
+        console.log(obj);
+    }).catch(err => console.error(err));
 }
 
 // Post Detect Callback
