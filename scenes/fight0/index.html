@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>FIGHT</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="./index.css">
+	<script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils@0.1/drawing_utils.js"
+		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@mediapipe/pose@0.1/pose.js" crossorigin="anonymous"></script>
+	<script src="https://code.createjs.com/1.0.0/createjs.min.js"></script>
+</head>
+
+<body>
+	<img src="assets/background.png" alt="" id="background">
+
+	<div class="health" id="playerBar">
+		<h1>Player</h1>
+		<progress id="barp" value="100" max="500"></progress>
+	</div>
+
+	<div class="health" id="enemyBar">
+		<h1>Enemy</h1>
+		<progress id="bare" value="100" max="100"></progress>
+	</div>
+
+	<div class="chars">
+		<img class="chars" id="player" src="assets/player.gif">
+		<img class="chars" id="enemy" src="assets/enemy.gif">
+	</div>
+
+	<div class="set">
+		<div class="place">
+			<button class="option_attack" id="option_attack_p">
+				<h2>Pushup</h2>
+				<h4>5 DMB</h4>
+			</button>
+			<button class="option_attack" id="option_attack_s">
+				<h2>Squat</h2>
+				<h4>2 DMB</h4>
+			</button>
+			<button class="option_heal" id="option_heal_lr">
+				<h2>Leg Raise</h2>
+				<h4>3 HP</h4>
+			</button>
+			<button class="option_heal" id="option_heal_kr">
+				<h2>Knee Raise</h2>
+				<h4>2 HP</h4>
+			</button>
+		</div>
+
+	</div>
+
+	<div class="container">
+		<video class="input_video"></video>
+		<canvas class="output_canvas" width="480px" height="270px"></canvas>
+	</div>
+
+	<script src="../../common/tracking.js"></script>
+	<script src="./gameplay.js"></script>
+</body>
+
+</html>
