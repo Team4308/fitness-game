@@ -9,7 +9,23 @@
 </head>
 
 <body>
-	<button type="button" class="button_play" id="button_play" onclick="window.location.href='/fitness-game/scenes/mainmenu/index.html';">PLAY</button>
+	<button type="button" class="button_play" id="button_play"
+		onclick="window.location.href='/fitness-game/scenes/mainmenu/index.html';">PLAY</button>
+	<script>
+		function detectWebcam(callback) {
+			let md = navigator.mediaDevices;
+			if (!md || !md.enumerateDevices) return callback(false);
+			md.enumerateDevices().then(devices => {
+				callback(devices.some(device => 'videoinput' === device.kind));
+			})
+		}
+
+		detectWebcam(function(hasWebcam) {
+			if (!hasWebcam) {
+				alert("this requires a webcam!");
+			}
+		})
+	</script>
 </body>
 
 </html>
