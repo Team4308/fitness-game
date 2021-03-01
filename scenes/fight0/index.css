@@ -28,11 +28,20 @@ body {
     right: 5vw;
 }
 
-#bar {
+#bare {
     width: 30vw;
     height: 20px;
     border: 4px solid black;
     text-align: center;
+}
+#barp {
+    width: 30vw;
+    height: 20px;
+    border: 4px solid black;
+    text-align: center;
+}
+progress#bare {
+    direction: rtl;
 }
 
 progress::-webkit-progress-bar {
@@ -76,6 +85,12 @@ progress::-webkit-progress-value {
     background-color: green;
     color: white;
 }
+#info{
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    padding-top: 5vh;
+}
 
 .input_video {
     display: none;
@@ -87,4 +102,9 @@ progress::-webkit-progress-value {
     margin: auto;
     padding-top: 25vh;
     transform: scaleX(-1);
+}
+button:disabled{
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
 }
