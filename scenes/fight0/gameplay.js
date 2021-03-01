@@ -114,6 +114,7 @@ $(document).ready(function(){
 })
 
 
+/*
 const atkPushupBtn = document.getElementById("option_attack_p");
 atkPushupBtn.onclick = () => {
     loadExercise("pushups");
@@ -154,3 +155,4 @@ healKneeraiseBtn.onclick = () => {
 
     setPostDetect(postD);
 };
+*/
