@@ -87,6 +87,7 @@ progress::-webkit-progress-value {
   border-radius: 16px;
   width: 15%;
   height: 11%;
+  font-family: 'DotGothic16', sans-serif;
   font-size: 1.5vw;
 }
 
