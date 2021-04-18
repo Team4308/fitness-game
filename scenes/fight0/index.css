@@ -100,7 +100,7 @@ progress::-webkit-progress-value {
     display: flex;
     justify-content: center;
     margin: auto;
-    padding-top: 25vh;
+    padding-top: 5vh;
     transform: scaleX(-1);
 }
 button:disabled{

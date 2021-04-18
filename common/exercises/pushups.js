@@ -6,7 +6,7 @@ var pushuphigh = false;
 
 export default function (landmarks) {
     var nosepos = landmarks[0].y;
-    var meanhpos = (landmarks[15].y + landmarks[16].y) / 2;
+    var meanhpos = (landmarks[13].y + landmarks[14].y) / 2;
     var nosehanddist = meanhpos - nosepos;
 
     // High state
